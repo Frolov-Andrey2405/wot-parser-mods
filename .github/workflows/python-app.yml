@@ -39,5 +39,5 @@ jobs:
 
       - name: Run tests with pytest
         run: |
-          # Вывод подробного результата тестов
+          # Detailed test results
           pytest -v --tb=short
