@@ -11,3 +11,10 @@ venv/
 ENV/
 env.bak/
 venv.bak/
+
+# Project output and data
+results.json
+
+# Downloaded and extracted mod files
+download_mods/
+unpacking_mods/
