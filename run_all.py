@@ -2,9 +2,9 @@ import subprocess
 import sys
 
 commands = [
-    [sys.executable, "parser.py"],
-    [sys.executable, "downloads.py"],
-    [sys.executable, "unpacking.py"]
+    [sys.executable, "./app/parser.py"],
+    [sys.executable, "./app/downloads.py"],
+    [sys.executable, "./app/unpacking.py"]
 ]
 
 for cmd in commands:

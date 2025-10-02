@@ -2,7 +2,7 @@ import os
 import unittest
 from unittest import mock
 
-from unpacking import ArchiveExtractor
+from app.unpacking import ArchiveExtractor
 
 
 class TestArchiveExtractor(unittest.TestCase):
