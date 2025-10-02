@@ -171,6 +171,9 @@ class ArchiveExtractor:
             "æ¬áτáΓ∞ ½πτΦ¿Ñ ¼«ñδ.url",
             "webSite.url",
             "Скачать лучшие моды_1.url",
+            "ВНИМАНИЕ!!! WARNING!!!_1.txt",
+            "Скачать лучшие моды_2.url",
+            "Установка_1.txt",
         ]
         self.delete_files(files_to_delete, self.output_folder)
 
@@ -186,11 +189,11 @@ class ArchiveExtractor:
         if self.check_folder_exists(os.path.join(self.output_folder, "WG")):
             self.process_wg_folder("WG")
 
-        target_folder = os.path.join(self.output_folder, "res_mods", "2.0.0.1")
+        target_folder = os.path.join(self.output_folder, "res_mods", "2.0.0.2")
         folders_to_move = ["objects", "scripts"]
         self.move_folders(folders_to_move, self.output_folder, target_folder)
 
-        mods_target_folder = os.path.join(self.output_folder, "mods", "2.0.0.1")
+        mods_target_folder = os.path.join(self.output_folder, "mods", "2.0.0.2")
         wotmod_file = "three-direction-indicator.wotmod"
         self.move_file(wotmod_file, self.output_folder, mods_target_folder)
 
