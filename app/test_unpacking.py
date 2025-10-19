@@ -48,14 +48,14 @@ class TestArchiveExtractor(unittest.TestCase):
     def test_delete_folders(self, mock_exists, mock_rmtree):
         mock_exists.return_value = True
         self.extractor.delete_folders(["folder1"], "/some/path")
-        # Используем os.path.join для кроссплатформенности
+        # os.path.join for cross-platform compatibility
         expected_path = os.path.join("/some/path", "folder1")
         mock_rmtree.assert_called_with(expected_path)
 
     @mock.patch("shutil.rmtree")
     @mock.patch("os.path.exists")
     def test_process_wg_folder(self, mock_exists, mock_rmtree):
-        # Симулируем наличие WG папки
+        # Simulate the presence of a WG folder
         def side_effect(path):
             if "WG" in path or "res_mods" in path:
                 return True
@@ -64,5 +64,5 @@ class TestArchiveExtractor(unittest.TestCase):
         mock_exists.side_effect = side_effect
         with mock.patch.object(self.extractor, "move_folders") as mock_move:
             self.extractor.process_wg_folder("WG")
-            mock_move.assert_called()  # Проверяем, что функция move_folders вызвалась
+            mock_move.assert_called()  # Verify that the move_folders function was called
             mock_rmtree.assert_called_with(os.path.join(self.output_folder, "WG"))
